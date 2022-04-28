@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Seances List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Libelle</th>
+          <th>duree</th>
+          <th>Type de la seance</th>
+          <th>Coach chargé</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of seances">
+          <td>{{p.libelle}}</td>
+          <td>{{p.duree}}</td>
+          <td>{{p.typeseance}}</td>
+          <td>{{p.seanceducoach_id_personne}}</td>
+          <td><button (click)="deleteSeance(p.id)" class="btn btn-danger">Delete</button>
+              <button (click)="updateSeance(p.id)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="seanceDetails(p.id)" class="btn btn-success" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

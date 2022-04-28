@@ -1,0 +1,41 @@
+<h3>Create Seance</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form #addseance="ngForm" (ngSubmit)="addseance.form.valid && save(addseance)">
+    <div class="form-group">
+      <label for="duree">Duree</label>
+      <input type="number" class="form-control" id="duree" required ngModel name="duree">
+    </div>
+
+    <div class="form-group">
+      <label for="libelle">Libelle</label>
+      <input type="text" class="form-control" id="libelle" required ngModel name="libelle">
+    </div>
+
+    <div class="form-group">
+      <label for="typeseance">Type de la seance </label>
+      <input type="number" min="0" max ="2" class="form-control" id="typeseance" required ngModel name="typeseance">
+      <h6>0:Meditation guidée, 1:Meditation pleine conscience, 2:Respiration structuree</h6>
+    </div>
+
+    <div class="form-group">
+    <label for="seanceducoach_id_personne">Id du coach</label>
+    <select class="form-control" id="DropdownOptions" name="seanceducoach_id_personne" ngModel>
+      <option
+        *ngFor="let coach of coachs"
+        [value]="coach"  >
+        <!-- {{ coach.id_personne }} -->
+        {{ coach.firstName }}
+        {{ coach.lastName }}
+
+      </option>
+    </select>
+  </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

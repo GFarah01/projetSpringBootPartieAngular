@@ -1,0 +1,33 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>Coachs List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>Firstname</th>
+          <th>Lastname</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>specialite</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of participants">
+          <td>{{p.firstName}}</td>
+          <td>{{p.lastName}}</td>
+          <td>{{p.email}}</td>
+          <td>{{p.age}}</td>
+          <td>{{p.specialite}}</td>
+          <td><button (click)="deleteCoach(p.id_personne)" class="btn btn-danger">Delete</button>
+              <button (click)="updateCoach(p.id_personne)" class="btn btn-info" style="margin-left: 10px">Update</button>
+              <button (click)="coachDetails(p.id_personne)" class="btn btn-success" style="margin-left: 10px">Details</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,0 +1,19 @@
+<h2>Details de la seance</h2>
+
+<hr/>
+<div *ngIf="seance1">
+  <div>
+    <label><b>Libelle de la séance: </b></label> {{seance1.libelle}}
+  </div>
+  <div>
+    <label><b>Duree de la seance: </b></label> {{seance1.duree}}
+  </div>
+  <div>
+    <label><b>Type de la seance: </b></label> {{seance1.typeseance}}
+  </div>
+
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Retourner à la liste des Senaces</button><br>

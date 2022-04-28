@@ -1,0 +1,36 @@
+<h3>Create Participant</h3>
+<div [hidden]="submitted" style="width: 400px;">
+  <form #addcoach="ngForm" (ngSubmit)="addcoach.form.valid && save(addcoach)">
+    <div class="form-group">
+      <label for="firstName">First Name</label>
+      <input type="text" class="form-control" id="firstName" required ngModel name="firstName">
+    </div>
+
+    <div class="form-group">
+      <label for="lastName">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required ngModel name="lastName">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Email</label>
+      <input type="text" class="form-control" id="email" required ngModel name="email">
+    </div>
+
+    <div class="form-group">
+      <label for="name">Age</label>
+      <input type="number" class="form-control" id="age" required ngModel name="age">
+    </div>
+
+    <div class="form-group">
+      <label for="specialite">Specialité</label>
+      <input type="text" class="form-control" id="specialite" required ngModel name="specialite">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h4>You submitted successfully!</h4>
+  <!-- <button class="btn btn-success" (click)="newEmployee()">Add</button> -->
+</div>

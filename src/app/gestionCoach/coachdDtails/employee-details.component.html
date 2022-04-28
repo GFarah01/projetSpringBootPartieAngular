@@ -1,0 +1,26 @@
+<h2>Coach Details</h2>
+
+<hr/>
+<div *ngIf="coach">
+  <div>
+    <label><b>First Name: </b></label> {{coach.firstName}}
+  </div>
+  <div>
+    <label><b>Last Name: </b></label> {{coach.lastName}}
+  </div>
+  <div>
+    <label><b>Email: </b></label> {{coach.email}}
+  </div>
+  <div>
+    <label><b>Age: </b></label> {{coach.age}}
+  </div>
+  <div>
+    <label><b>Specialite: </b></label> {{coach.specialite}}
+  </div>
+</div>
+
+<br>
+<br>
+<button (click)="list()" class="btn btn-primary">Back to Employee List</button><br>
+
+
